@@ -39,7 +39,7 @@ gator reset
 ```
 
 
-## SETUP
+## SETUP (To be automated in future)
 1. Install Postgres
 mac OS with brew
 ```
