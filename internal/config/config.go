@@ -10,11 +10,12 @@ const (
 )
 
 type Config struct{
-	DbUrl			string	`json:"db_url"`
-	UserName	string	`json:"current_user_name"`
+	DbUrl				string	`json:"db_url"`
+	UserName		string	`json:"user_name"`
 }
 
-func ReadConfig() (*Config, error) {
+
+func LoadConfig() (*Config, error) {
 	file, err := os.Open(getConfigFilePath())
 	if err != nil {
 		return nil, fmt.Errorf("Error reading config file: %v\n", err)

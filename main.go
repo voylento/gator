@@ -117,7 +117,7 @@ func InitializeApp() (*State, *CommandMap) {
 	cmds.Register("unfollow", middlewareLoggedIn(handleUnfollow), "unfollow <feed_url> - Unfollow a feed")
 	cmds.Register("users", handleUsers, "users - Show all registered users")
 
-	cfg, err := config.ReadConfig()
+	cfg, err := config.LoadConfig()
 	if err != nil {
 		fmt.Printf("%v\n", err)
 		os.Exit(1)
@@ -704,3 +704,4 @@ func loadCachedPosts() ([]database.GetPostsForUserRow, error) {
     err = json.Unmarshal(data, &posts)
     return posts, err
 }
+
